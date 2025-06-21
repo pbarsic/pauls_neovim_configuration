@@ -1,4 +1,4 @@
-# Neovim Setup
+# Paul's Neovim Configuration
 
 This documents my personal [neovim](https://github.com/neovim/) build, setup, and configuration.
 
@@ -10,32 +10,45 @@ cd build && \
 cpack -G DEB && \
 sudo dpkg -i nvim-linux-x86_64.deb
 ```
-I am moving from `vim` to `neovim`. I have the following features and tools integrated into `vim`, and I want similar or better functionality in `neovim`.
-These are things I need:
+
+Verify that `nvim` is the one you expect with `nvim --version`.
+
+Then make it the default `vi` with `sudo update-alternatives --install /usr/bin/vi vi $(which nvim) 25`, where `25` is a number that is bigger than the other `Priority` numbers in the table when you type `sudo update-alternatives --config vi`. This makes `nvim` the default choice.
+
+Finally, clone this repo into `~/.config/`.
+
+When you type `vi`, it should start downloading the plugins.
+
+## Goals
+
+I am moving from `vim` to `neovim`. These are things I need my editor to do:
 
 * code tree navigation
 * code completion
 * argument help
 * rust analyzer
 * my keyboard shortcuts
+* integrated code debugger
 
-These are the plugins that I am currently using in `vim`.
+I have the following plugins integrated into `vim`. I want similar or better functionality in `neovim`.
 
-* XX ~~[CoC](https://github.com/neoclide/coc.nvim)~~ XX
-* ~~[rust.vim](https://github.com/rust-lang/rust.vim)~~
-* ~~[tagbar](https://github.com/preservim/tagbar)~~
-* ~~[copilot](https://github.com/features/copilot)~~
-* ~~[fugitive](https://github.com/tpope/vim-fugitive)~~
-* ~~[vim-gitgutter](https://github.com/airblade/vim-gitgutter)~~
-* ~~[indentLine](https://github.com/Yggdroot/indentLine)~~
+* ~~[CoC](https://github.com/neoclide/coc.nvim)~~
+* [rust.vim](https://github.com/rust-lang/rust.vim)
+* [tagbar](https://github.com/preservim/tagbar)
+* [copilot](https://github.com/features/copilot)
+* [fugitive](https://github.com/tpope/vim-fugitive)
+* [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+* [indentLine](https://github.com/Yggdroot/indentLine)
 
 Apparently [CoC isn't cool anymore](https://www.reddit.com/r/neovim/comments/14pvyo4/why_is_nobody_using_coc_anymore/) because of the NodeJS requirement, and updates to the LSP capabilities in neovim and other plugins. In particular:
 "[null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim), [mason.nvim](https://github.com/williamboman/mason.nvim), [nvim-cmp](https://github.com/hrsh7th/nvim-cmp), and native LSP together do everything I used from CoC, but are simpler and quicker.
 
+Notice that this list does not include a debugger. I want to add this functionality to my `neovim` configuration.
+
 ## Fonts
 
-There are a bunch of nice icons and things that require [Nerd Fonts](https://www.nerdfonts.com/#home). Download a font, unzip it in `~/.local/share/fonts/` and then run `fc-cache -fv` to update the fonts cache.
-If you install a new font and want to use it in tilix, you have to restart tilix. I've installed `0XProto` to start.
+There are a bunch of nice icons and things that require [Nerd Fonts](https://www.nerdfonts.com/#home). Download a font, unzip it in `~/.local/share/fonts/` and then run `fc-cache -fv` to update the fonts cache. If you download a bunch of them, and they're the only zip files in `~/Downloads`, you can unzip them all at once with `cd ~/.local/share/fonts; for z in ~/Downloads/*.zip ; do dir=$(basename $z  .zip); mkdir $dir ; cd $dir; unzip $z; rm $z; cd - ; done`
+If you install a new font and want to use it in `tilix`, you have to restart `tilix`. I've installed `0XProto` to start.
 This will be fun to play with.
 These are not `neovim` specific, but there are additional characters in these fonts that make `neovim` prettier.
 
@@ -91,6 +104,7 @@ There is more config I would like to do.
 
 [try some different color schemes](https://medium.com/unixification/my-favorite-neovim-colorschemes-1e5c995fa12e)
 
+[some mouse stuff](https://alpha2phi.medium.com/neovim-101-mouse-and-menu-a2d2be60b3e1)
 
 ## Troubleshooting
 
@@ -122,8 +136,6 @@ The problem was that the parser for vimdoc was not installed. I hate to say it, 
 `:TSInstall vimdoc`. This solved the problem.
 I added a list of requried types in the config, so just update those in the future.
 
-[some mouse shit](https://alpha2phi.medium.com/neovim-101-mouse-and-menu-a2d2be60b3e1)
-
 ### weird error when branch changing
 
 ```
@@ -145,3 +157,11 @@ There was also `rust-lang/rust.vim`, and I'm not sure what it does.
 I switched to `mrcjkb/rustaceanvim`, the package recommended on the `rust-tools` github page. It's much better.
 
 The `gD` mapping still doesn't work, but I like the pop-up that I enabled with `K` better. Hit `K` once to bring the pop-up, enter to make it disappear, a second `K` to focus on the menu, and then you can arrow around.
+
+## Other Configurations
+
+Here are some other configurations to consider:
+
+* [awesome-neovim](https://github.com/rockerBOO/awesome-neovim)
+* [Neovim-from-scratch](https://github.com/LunarVim/Neovim-from-scratch)
+
