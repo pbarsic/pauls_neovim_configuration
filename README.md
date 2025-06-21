@@ -15,7 +15,7 @@ Verify that `nvim` is the one you expect with `nvim --version`.
 
 Then make it the default `vi` with `sudo update-alternatives --install /usr/bin/vi vi $(which nvim) 25`, where `25` is a number that is bigger than the other `Priority` numbers in the table when you type `sudo update-alternatives --config vi`. This makes `nvim` the default choice.
 
-Finally, clone this repo into `~/.config/`.
+Finally, clone this repo into `~/.config/` and rename the folder from `pauls_neovim_configuration` to `nvim`.
 
 When you type `vi`, it should start downloading the plugins.
 
