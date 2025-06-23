@@ -35,3 +35,8 @@ require("lazy").setup({
 })
 
 require("mason").setup()
+
+-- Load the initial colorscheme here.
+-- These are my two favorite.
+-- vim.cmd([[colorscheme rose-pine]])
+vim.cmd([[colorscheme moonfly]])
