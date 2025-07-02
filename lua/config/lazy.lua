@@ -38,5 +38,16 @@ require("mason").setup()
 
 -- Load the initial colorscheme here.
 -- These are my two favorite.
--- vim.cmd([[colorscheme rose-pine]])
-vim.cmd([[colorscheme moonfly]])
+vim.cmd([[colorscheme rose-pine]])
+-- vim.cmd([[colorscheme moonfly]])
+
+-- This hack aliases the zmd filteype as yaml.
+-- It would be better to register it as zmd and then
+-- tell treesitter that it should use the yaml parser
+-- for zmd files with vim.treesitter.language.register('yaml', 'zmd')
+-- but I cannot get that to work.
+vim.filetype.add({
+  extension = {
+    zmd = "yaml",
+  },
+})

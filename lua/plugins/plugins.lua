@@ -30,10 +30,10 @@ return {
           'make',
           'toml',
           'vimdoc',
- 	  'yaml',
- 	  'markdown',
- 	  'markdown_inline',
- 	  'python',
+          'yaml',
+          'markdown',
+          'markdown_inline',
+          'python',
         })
       end
     end,
