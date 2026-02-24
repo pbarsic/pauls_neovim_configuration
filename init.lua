@@ -1,17 +1,5 @@
 require("config.lazy")
 
--- Mason Setup
-require("mason").setup({
-    ui = {
-        icons = {
-            package_installed = "",
-            package_pending = "",
-            package_uninstalled = "",
-        },
-    }
-})
-require("mason-lspconfig").setup()
-
 vim.opt.relativenumber=true
 vim.opt.number=true
 vim.opt.signcolumn=yes

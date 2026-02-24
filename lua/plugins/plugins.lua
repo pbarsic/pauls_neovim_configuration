@@ -1,15 +1,5 @@
 return {
 
-  { 
-    "williamboman/mason.nvim",
-    opts = {},
-  },
-
-  {
-    "williamboman/mason-lspconfig.nvim",
-    opts = {},
-  },
-
   {
     'mrcjkb/rustaceanvim',
     version = '^6', -- Recommended

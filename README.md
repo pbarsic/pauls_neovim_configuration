@@ -41,7 +41,7 @@ I have the following plugins integrated into `vim`. I want similar or better fun
 * [indentLine](https://github.com/Yggdroot/indentLine)
 
 Apparently [CoC isn't cool anymore](https://www.reddit.com/r/neovim/comments/14pvyo4/why_is_nobody_using_coc_anymore/) because of the NodeJS requirement, and updates to the LSP capabilities in neovim and other plugins. In particular:
-"[null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim), [mason.nvim](https://github.com/williamboman/mason.nvim), [nvim-cmp](https://github.com/hrsh7th/nvim-cmp), and native LSP together do everything I used from CoC, but are simpler and quicker.
+"[null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim), [nvim-cmp](https://github.com/hrsh7th/nvim-cmp), and native LSP together do everything I used from CoC, but are simpler and quicker.
 
 Notice that this list does not include a debugger. I want to add this functionality to my `neovim` configuration.
 
