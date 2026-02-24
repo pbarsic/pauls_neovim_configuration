@@ -34,8 +34,6 @@ return {
 
 -- tagbar
   { "preservim/tagbar", event = "VeryLazy" },
--- copilot
-  { "github/copilot.vim", event = "VeryLazy" },
 -- fugitive
   { "tpope/vim-fugitive", event = "VeryLazy" },
 -- gitgutter
