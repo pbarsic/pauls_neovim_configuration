@@ -7,6 +7,8 @@ vim.opt.tabstop=4
 vim.opt.shiftwidth=4
 vim.opt.expandtab=true
 
+require("config.rustaceanvim")
+
 vim.api.nvim_set_keymap(
     'n',
     "<leader>t",
