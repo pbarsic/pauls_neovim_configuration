@@ -1,4 +1,5 @@
 require("config.lazy")
+require("config.rust")
 
 vim.opt.relativenumber=true
 vim.opt.number=true
@@ -6,8 +7,6 @@ vim.opt.signcolumn=yes
 vim.opt.tabstop=4
 vim.opt.shiftwidth=4
 vim.opt.expandtab=true
-
-require("config.rustaceanvim")
 
 vim.api.nvim_set_keymap(
     'n',
